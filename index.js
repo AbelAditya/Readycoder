@@ -1,4 +1,6 @@
-document.querySelector(".btn-warning").addEventListener("click", function () {
+document.querySelector(".indi-btn").addEventListener("click", function (e) {
+
+  e.preventDefault()
   let name = document.getElementById("username").value;
   let phone_number = document.getElementById("usernumber").value;
   let email_id = document.getElementById("useremail").value;
@@ -22,10 +24,15 @@ document.querySelector(".btn-warning").addEventListener("click", function () {
 
   postRequest.setRequestHeader("Content-type", "application/json");
   postRequest.addEventListener("load", function () {
-    let response = postRequest.response;
+    let response = JSON.parse(postRequest.response);
 
-    console.log(response.status);
+    console.log(response.status)
   });
 
   postRequest.send(JSON.stringify(obj));
 });
+
+
+
+
+

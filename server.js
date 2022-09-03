@@ -19,7 +19,7 @@ mongoose
     useFindAndModify: false,
   })
   .then((connection) => {
-    console.log("Successfully connected");
+    console.log("Successfully connected to the database");
   })
   .catch((err) => {
     console.log("Some problem occured while connecting to the database");
